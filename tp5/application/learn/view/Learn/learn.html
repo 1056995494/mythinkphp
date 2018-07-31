@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+       
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                data={
+                    name:'datou',
+                    pass:123
+                };
+                /*
+                $.post("http://www.tp5.com/learn/learn.html",data,function(data,status){
+                    console.log(data);
+                    $("p").html(data);
+                    console.log(status);
+                });*/
+                var xmlhttp;
+                if(window.XMLHttpRequest){
+                    xmlhttp=new XMLHttpRequest();
+                }else{
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function(){
+                    if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                        console.log(xmlhttp.responseText);
+                    }
+                }
+                xmlhttp.open("GET","http://www.tp5.com/learn/learn.html?id=123",true);
+                xmlhttp.send();
+            });
+         
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <p></p>
+    </body>
+</html>
